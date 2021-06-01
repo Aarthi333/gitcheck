@@ -1,0 +1,289 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center" style="background-color:aquamarine">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+@*<div>
+    <a asp-action="ProductView">view pizza</a>
+</div>
+<div>
+    <a asp-action="CreateBooking">Book your order!!!</a>
+</div>
+<div>
+    <a asp-action="CreateOrderDetails">order</a>
+</div>
+<div>
+    <a asp-action="OrderConfirm">orderconfirm</a>
+</div>
+<div>
+    <a asp-action="PizzaIndex">pizzaindex</a>
+</div>*@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script>
+        function Reg() {
+            alert("Please Register to view the menu");
+        }
+    </script>
+</head>
+<body style="background-color:moccasin">
+    <div>
+        @*<DIV class="shadow-lg p-3 mb-4 bg-body rounded">
+            <center>
+                <H3 class="font-weight-bolder" role="alert">
+                    ORDER PIZZAS ONLINE AT MR.PIZZA!
+                </H3>
+            </center>
+        </DIV>*@
+        <!--SOCIAL WEBSITES-->
+        <DIV class="shadow-lg p-3 mb-4 bg-light rounded">
+            <ul class="nav justify-content-center" style="text-align:left">
+                <li class="nav-item">
+                    <a class="nav-link active" href="https://www.facebook.com/"><img src="fb.jpg" width="30" height="30" style="margin-left:50px" /></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://twitter.com/?lang=en"><img src="twit.jpg" width="40" height="30" style="margin-left:50px" /></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.instagram.com/"><img src="insta.jpg" width="40" height="30" style="margin-left:50px" /></a>
+                </li>
+            </ul>
+        </DIV>
+    </div>
+    <!-- navigation bars-->
+    <DIV class="shadow-lg p-3 mb-5 bg-light rounded">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active"><img src="~/Mr.pizza_logo.jpg" width="100" height="100" /></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" asp-action="PizzaIndex">PIZZA MENU!!</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" asp-action="ProductView">VIEW PIZZA!!!!</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="CreateOrderDetails">ORDER YOUR PIZZAS NOW!!!</a>
+            </li>
+            <li class="nav-item" style="margin-left:750px">
+                <a class="nav-link" asp-action="ReviewIndex">
+                    <button asp-action="ReviewIndex" class="btn btn-primary">
+                        RECENT REVIEWS.....
+                    </button>
+                </a>
+            </li>
+            <li class="nav-item" style="margin-left:750px">
+                <a class="nav-link" asp-action="Review">
+                    <button asp-action="ReviewIndex" class="btn btn-primary">
+                         TOP REVIEWS <span class="badge bg-info">3</span>
+                    </button>
+                </a>
+            </li>
+            @*<li class="nav-item" style="margin-bottom:20px">
+            <a class="nav-link">
+                <input type="search" style="width:450px" placeholder="SEARCH HERE.." /><button> <img src="SCH.png" width="20" height="20" style="margin-left:15px" /></button>
+            </a>
+        </li>*@
+        </ul>
+    </DIV>
+    -
+    <!--carousel-->
+    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin:10px">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="height:250px">
+                    <img src="~/ACPIZZA.jpg" height="250" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" style="height:250px">
+                    <img src="piz2.jpg" height="250" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" style="height:250px">
+                    <img src="piz3.jpg" height="250" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+            </DIV>
+        </div>
+    </DIV>
+    &nbsp;
+    <h3 class="font-weight-light">NEW ARRIVALS!!!</h3>
+    <table>
+        <tr>
+            <td>
+                <DIV class="shadow-lg p-3 mb-5 bg-body rounded" style="margin:10px">
+                    <div class="card" style="width:18rem;">
+                        <div class="card-header">COMING SOON....</div>
+                        <div class="card-body">
+                            <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/bbqpizza.jpg" />
+                            <p class="card-footer">SPICY BBQ CHICKEN PIZZA</p>
+                            <br />
+                        </div>
+                    </div>
+                </DIV>
+            </td>
+            <td>
+                <DIV class="shadow-lg p-3 mb-5 bg-body rounded" style="margin:10px">
+                    <div class="card" style="width:18rem;">
+                        <div class="card-header">COMING SOON....</div>
+                        <div class="card-body">
+                            <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/Crozzopizza.jpg" />
+                            <p class="card-footer">
+                                OLIVE ROSEMARY FOCACCIA
+                            </p>
+                            <br />
+                        </div>
+                    </div>
+                </DIV>
+            </td>
+            <td>
+                <DIV class="shadow-lg p-3 mb-5 bg-body rounded" style="margin:10px">
+                    <div class="card" style="width:18rem;">
+                        <div class="card-header">COMING SOON....</div>
+                        <div class="card-body">
+                            <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/chettinadPizza.jpg" />
+                            <p class="card-footer">
+                                CHETTINAD CLASSICAH
+                            </p>
+                            <br />
+                        </div>
+                    </div>
+                </DIV>
+            </td>
+            <td>
+                <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="card" style="width:18rem;">
+                        <div class="card-header">COMING SOON....</div>
+                        <div class="card-body">
+                            <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/frozenPiizza.jpg" />
+                            <p class="card-footer">FROZEN 6 INCH MARGHERITA </p>
+                            <br />
+                        </div>
+                    </div>
+                </DIV>
+            </td>
+            @*<td>
+                <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="card" style="width:18rem;">
+                        <div class="card-header">COMING SOON....</div>
+                        <div class="card-body">
+                            <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/ACPIZZA.jpg" />
+                            <p class="card-footer">  ACHARI DO PYAZA </p>
+                            <br />
+                        </div>
+                    </div>
+                </DIV>
+            </td>*@
+        </tr>
+    </table>
+    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+        <div style="background-color:turquoise">
+            <blockquote class="blockquote text-center">
+                <p class="mb-0">
+                    "Beauty comes in all shapes and sizes. Small, large, circle, square, thin crust, thick crust, stuffed crust, extra toppings." - Anonymous
+                </p>
+                <br />
+                <footer class="blockquote-footer">
+                    And we truly love pizza in all its wonders so you can choose the pizza you love the most.
+                </footer>
+            </blockquote>
+
+        </div>
+    </DIV>
+    <!--horizontal alignment-->
+    <!--also with overflow-->
+    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm" style="background-color:papayawhip">
+                    <!-- progress bars-->
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                        <div class="alert alert-primary" role="alert">
+                            REVIEWS FROM OUR CUSTOMERS
+                        </div>
+                        <div class="progress" style="border: solid ">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="10" aria-valuemax="100">CHEESE PIZZA</div>
+                        </div>
+                        <div class="progress" style="border: solid  ">
+                            <div class="progress-bar bg-info" role="progressbar" style="width:75%" aria-valuenow="70" aria-valuemin="10" aria-valuemax="100">VEG PIZZA</div>
+                        </div>
+                        <div class="progress" style="border: solid  ">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width:75%" aria-valuenow="75" aria-valuemin="10" aria-valuemax="100">NON VEG PIZZA</div>
+                        </div>
+                    </DIV>
+                </div>
+                <div class="col-sm" style="background-color:sandybrown">
+                    <div style="margin-left:45px">
+                        <div class="card" style="width: 25rem;">
+                            <img src="Mr.pizza_logo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title">MR.PIZZA</h3>
+                                <p class="card-text"> MR.PIZZA is a pizza shop solely built for the pizza lovers. </p>
+                                <a asp-action="ProductView" class="btn btn-primary stretched-link">AboutUs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm" style="background-color:papayawhip">
+                    <!--TABLE-->
+                    <table class="table" border="3" style="margin:4px">
+                        <thead style="background-color:white">
+                            <tr>
+                                <th scope="col">S.NO</th>
+                                <th scope="col">FAVOURITE TOPPINGS</th>
+                                <th scope="col">NEW ARRIVALS</th>
+                            </tr>
+                        </thead>
+                        <tbody style="background-color:white">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>CHILLI FLAKES</td>
+                                <td>
+                                    St.LOUIS PIZZA CRUST
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>OREGANO </td>
+                                <td>DEEP DISH PIZZA</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>SPECIAL SPICE LEAVES</td>
+                                <td>SICILIAN PIZZA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </DIV>
+    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+        <h3 class="alert alert-info" role="alert" style="text-align:center">
+            “I want to live in a world where the need for pizza belittles that of war.” – Jason Barnett.
+            Share love, hope & pizza®. Not war.<br />
+            For further details ,feel free to contact us through our social accounts The information mentioned here is true to our knowledge!
+        </h3>
+    </DIV>
+</body>
+</html>
