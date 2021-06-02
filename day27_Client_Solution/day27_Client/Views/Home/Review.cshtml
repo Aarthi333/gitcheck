@@ -1,0 +1,115 @@
+@*Import System.Runtime.InteropServices
+
+' In SDK-style projects such as this one, several assembly attributes that were historically
+' defined in this file are now automatically added during build and populated with
+' values defined in project properties. For details of which attributes are included
+' and how to customise this process see: https://aka.ms/assembly-info-properties
+
+
+' Setting ComVisible to false makes the types in this assembly not visible to COM
+' components.  If you need to access a type in this assembly from COM, set the ComVisible
+' attribute to true on that type.
+
+<Assembly: ComVisible(False)> 
+
+' The following GUID is for the ID of the typelib if this project is exposed to COM.
+
+<Assembly: Guid("615c843f-6d7c-4ac0-a458-4dd866aede18")>*@ 
+
+<html>
+<head>
+    <script>
+        function getVal() {
+            const val1 = document.getElementById('n1').value;
+            const val2 = document.getElementById('c1').value;         
+            let message =
+               ` ${ val1 } :  
+                ___________________
+                   ${val2}
+                     `;
+            let para = document.createElement('p'); //<p></p>
+            let paraText = document.createTextNode(message);
+            para.appendChild(paraText);//<p>message</p>
+            let targetElement = document.getElementById('review');
+            targetElement.appendChild(para);
+        }
+    </script>
+</head>
+<body>
+    <h3 class="font-weight-light">PUBLIC REVIEWS!!!</h3>
+    <table>
+        <tr>
+            <td>
+                <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="card" style="width:18rem;">
+                        <div class="card-header">Santhosh From Besant Nagar</div>
+                        <div class="card-body">
+                            <p class="card-footer">Loved the pizzas and their toppings!!Food was delivered Fast!!! </p>
+                            <br />
+                        </div>
+                    </div>
+                </DIV>
+            </td>
+            <td>
+                <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="card" style="width:18rem;">
+                        <div class="card-header">Sam From Anna Nagar</div>
+                        <div class="card-body">
+                            <p class="card-footer">Nice cheese pizza.lOVED the Sausage toppings more int the chicken pizza.Waiting for Mr.pizza'S BBQ !!!;-) </p>
+                            <br />
+                        </div>
+                    </div>
+                </DIV>
+            </td>
+            <td>
+                <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="card" style="width:18rem;">
+                        <div class="card-header">Santhosh From Besant Nagar</div>
+                        <div class="card-body">
+                            <p class="card-footer">Best chicken pizza everrrrr!!!!!!!!!!!!!!!!! </p>
+                            <br />
+                        </div>
+                    </div>
+                </DIV>
+            </td>
+           @* <td>
+                <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="card" style="width:18rem;">
+                        <div class="card-header"><input type="text" placeholder="Enter where you are from!!! " id="n1"></div>
+                        <div class="card-body">
+                            <p class="card-footer"><input type="text" placeholder="Add Review :" id="c1"> </p>
+                            <input type="submit" value="POST" onclick="getVal()" />
+                            <br />
+                        </div>
+                    </div>
+                </DIV>
+            </td>
+            <TR>
+            <td>
+                <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="card" style="width:18rem;">
+                        <div class="card-header">YOUR REVIEW</div>
+                        <div class="card-header">
+                            <p class="card-footer"><div class="card" style="text-align:center" id="review"></div> </p>
+                            <br />
+                        </div>
+                    </div>
+                </DIV>
+            </td>
+                </TR> *@
+            @*<td>
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                        <div class="card" style="width:18rem;">
+                            <div class="card-header">COMING SOON....</div>
+                            <div class="card-body">
+                                <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/ACPIZZA.jpg" />
+                                <p class="card-footer">  ACHARI DO PYAZA </p>
+                                <br />
+                            </div>
+                        </div>
+                    </DIV>
+                </td>*@
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,458 @@
+@*Import System.Runtime.InteropServices*@
+
+
+   @* ' In SDK-style projects such as this one, several assembly attributes that were historically
+    ' defined in this file are now automatically added during build and populated with
+    ' values defined in project properties. For details of which attributes are included
+    ' and how to customise this process see: https://aka.ms/assembly-info-properties
+
+
+    ' Setting ComVisible to false makes the types in this assembly not visible to COM
+    ' components.  If you need to access a type in this assembly from COM, set the ComVisible
+    ' attribute to true on that type.
+    <Assembly: ComVisible(False)>
+    ' The following GUID is for the ID of the typelib if this project is exposed to COM.
+    <Assembly: Guid("b042c2f0-6779-4ea5-9c93-5fae638a7c05")>*@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        #c1:hover {
+            position: relative;
+            left: 10px;
+            right: 30px;
+            display: inline;
+            
+        }
+
+        #c2:hover {
+            position: relative;
+            left: 10px;
+            right: 30px;
+            display: inline;
+          
+        }
+
+        #c3:hover {
+            position: relative;
+            left: 10px;
+            right: 30px;
+            display: inline;
+         
+        }
+
+        #a1:hover {
+            position: relative;
+            left: 10px;
+            right: 30px;
+            display: inline;
+        }
+
+        #a2:hover {
+            position: relative;
+            left: 10px;
+            right: 30px;
+            display: inline;
+        }
+
+        #a3:hover {
+            position: relative;
+            left: 10px;
+            right: 30px;
+            display: inline;
+        }
+
+        #b1:hover {
+            position: relative;
+            left: 10px;
+            right: 30px;
+            display: inline;
+        }
+
+        #b2:hover {
+            position: relative;
+            left: 10px;
+            right: 30px;
+            display: inline;
+        }
+        #b3:hover {
+            position: relative;
+            left: 10px;
+            right: 30px;
+            display: inline;
+        }
+
+        #t1 {
+            background-color: aquamarine;
+        }
+
+        #t2 {
+            background-color: aquamarine;
+        }
+
+        #t3 {
+            background-color: aquamarine;
+        }
+      </style>
+   </head>
+<body>
+    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+        <div id="d1" style="background-color:papayawhip">
+            <h1 class="font-italic"><center> PIZZA MENU !!!</center></h1>
+        </div>
+    </DIV>
+    <div id="d2"> 
+    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active">
+                    <select id="menid" class="badge-info">
+                        <option value="Currently available" selected>MENU</option>
+                        <option value="Cheese">Cheese</option>
+                        <option value="Veg">Veg</option>
+                        <option value="Non-Veg">Non-Veg</option>
+                    </select>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                    <summary style="color: darkmagenta" class="badge-light">
+                        <details>
+                            this page holds the menu of our shop!
+                        </details>
+                    </summary>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  asp-action="CreateOrderDetails" style="font-display:fallback"> BOOK YOUR PIZZAS NOWWW!! </a>
+            </li>
+            @*<li class="nav-item" style="margin-bottom:20px">
+                <a class="nav-link">
+                    <input type="search" style="width:450px" placeholder="SEARCH HERE.." /><button> <img src="~/SCH.png" width="20" height="20" style="margin-left:15px" /></button>
+                </a>
+            </li>*@
+        </ul>
+    </DIV>
+        </div>
+    <div id="d3">
+        <table>
+            <tr>
+                <td id="c2">
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                        <div class="card" style="width:18rem;">
+                            <div class="card-body">
+                                <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/piz1.jpg" />
+                                <h5 class="card-title">Cheeze pizza</h5>
+                                <p class="card-text">
+                                    <a asp-action="" class="btn btn-primary">cost Rs.100</a>
+                                </p>
+                                <p class="card-footer">Yearning for a cheesy delight? Here's a Cheesy pizza to add soul to your weekend binging!It combines the goodness of cheese with wonderful veggies..No comfort food is better than a Pizza loaded with cheese! </p>
+                                <br/>
+                                <p class="card-deck"><img src="~/veglogo.png" style="margin-left:10px"  width="30" height="30"/><img src="~/rating.jpg" style="margin-left:140px" width="100" height="30" /> </p>                                
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>CRUST</option>
+                                        <option value="Traditional pan pizza">Traditional pan pizza</option>
+                                        <option value="Thin crust">Thin crust</option>
+                                        <option value="Chicago Deep Dish">Chicago Deep Dish</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>TOPPINGS</option>
+                                        <option value="mushroom">Mushrooms</option>
+                                        <option value="onion">Onions</option>
+                                        <option value="black pepper">Black pepper</option>
+                                        <option value="olives">Olives</option>
+                                        <option value="extra cheese">Extra Cheese</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                    </DIV>
+                </td>
+                <td id="c1">
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded" style="margin:40px">
+                        <div class="card" style="width:18rem;">
+                            <div class="card-body">
+                                <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/vegpizza.jpg" />
+                                <h5 class="card-title">Veg Pizza</h5>
+                                <p class="card-text">
+                                    <a asp-action="" class="btn btn-primary">cost Rs.100</a>
+                                </p>
+                                <p class="card-footer">
+                                    Hot, cheesy pizza loaded with your favorite veggies,featuring cherry tomatoes, artichoke, bell pepper, olives, red onion and some hidden baby spinach. There's a base of rich tomato sauce and golden, bubbling mozzarella underneath.
+                                </p><br />
+                                <p class="card-deck"><img src="~/veglogo.png" style="margin-left:10px" width="30" height="30" /><img src="~/rating.jpg" style="margin-left:140px" width="100" height="30" /> </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>CRUST</option>
+                                        <option value="Traditional pan pizza">Traditional pan pizza</option>
+                                        <option value="Thin crust">Thin crust</option>
+                                        <option value="Chicago Deep Dish">Chicago Deep Dish</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>TOPPINGS</option>
+                                        <option value="mushroom">Mushrooms</option>
+                                        <option value="onion">Onions</option>
+                                        <option value="black pepper">Black pepper</option>
+                                        <option value="olives">Olives</option>
+                                        <option value="extra cheese">Extra Cheese</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                    </DIV>
+                </td>
+                <td id="c3">
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                        <div class="card" style="width:18rem;">
+                            <div class="card-body">
+                                <img class="card-img-top" src="~/nonvegpizza.jpg" width="300" height="300" style="margin:50px 10px" />
+                                <h5 class="card-title">Non-Veg Pizza</h5>
+                                <p class="card-text">
+                                    <a asp-action="" class="btn btn-primary">cost Rs.100</a>
+                                </p>
+                                <p class="card-footer">Chicken Supreme Pizza is a tasty type of pizza which is topped with shredded chicken, mushrooms, capsicum. It combines the goodness of chicken with these wonderful veggies.</p><br />
+                                <p class="card-deck"><img src="~/nonveglogo.png" style="margin-left:10px" width="30" height="30" /><img src="~/rating2.jpg" style="margin-left:140px" width="100" height="30" /> </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>CRUST</option>
+                                        <option value="Traditional pan pizza">Traditional pan pizza</option>
+                                        <option value="Thin crust">Thin crust</option>
+                                        <option value="Chicago Deep Dish">Chicago Deep Dish</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>TOPPINGS</option>
+                                        <option value="mushroom">Mushrooms</option>
+                                        <option value="bacon">Bacons</option>
+                                        <option value="Sausage">Sausage</option>
+                                        <option value="olives">Olives</option>
+                                        <option value="extra cheese">Extra Cheese</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                    </DIV>
+                </td>
+            </tr>
+            <tr>
+                <td id="a1">
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                        <div class="card" style="width:18rem;">
+                            <div class="card-body">
+                                <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/piz1.jpg" />
+                                <h5 class="card-title">Mayo Pizza</h5>
+                                <p class="card-text">
+                                    <a asp-action="" class="btn btn-primary">cost Rs.100</a>
+                                </p>
+                                <p class="card-footer">Yearning for a cheesy delight? Here's a Cheesy pizza to add soul to your weekend binging!It combines the goodness of cheese with wonderful veggies..No comfort food is better than a Pizza loaded with cheese! </p>
+                                <br />
+                                <p class="card-deck"><img src="~/veglogo.png" style="margin-left:10px" width="30" height="30" /><img src="~/rating.jpg" style="margin-left:140px" width="100" height="30" /> </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>CRUST</option>
+                                        <option value="Traditional pan pizza">Traditional pan pizza</option>
+                                        <option value="Thin crust">Thin crust</option>
+                                        <option value="Chicago Deep Dish">Chicago Deep Dish</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>TOPPINGS</option>
+                                        <option value="mushroom">Mushrooms</option>
+                                        <option value="onion">Onions</option>
+                                        <option value="black pepper">Black pepper</option>
+                                        <option value="olives">Olives</option>
+                                        <option value="extra cheese">Extra Cheese</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                    </DIV>
+                </td>
+                <td id="a2">
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded" style="margin:40px">
+                        <div class="card" style="width:18rem;">
+                            <div class="card-body">
+                                <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/vegpizza.jpg" />
+                                <h5 class="card-title">St.Louis Pizza </h5>
+                                <p class="card-text">
+                                    <a asp-action="" class="btn btn-primary">cost Rs.100</a>
+                                </p>
+                                <p class="card-footer">
+                                    Hot, cheesy pizza loaded with your favorite veggies,featuring cherry tomatoes, artichoke, bell pepper, olives, red onion and some hidden baby spinach. There's a base of rich tomato sauce and golden, bubbling mozzarella underneath.
+                                </p><br />
+                                <p class="card-deck"><img src="~/veglogo.png" style="margin-left:10px" width="30" height="30" /><img src="~/rating.jpg" style="margin-left:140px" width="100" height="30" /> </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>CRUST</option>
+                                        <option value="Traditional pan pizza">Traditional pan pizza</option>
+                                        <option value="Thin crust">Thin crust</option>
+                                        <option value="Chicago Deep Dish">Chicago Deep Dish</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>TOPPINGS</option>
+                                        <option value="mushroom">Mushrooms</option>
+                                        <option value="onion">Onions</option>
+                                        <option value="black pepper">Black pepper</option>
+                                        <option value="olives">Olives</option>
+                                        <option value="extra cheese">Extra Cheese</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                    </DIV>
+                </td>
+                <td id="a3">
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                        <div class="card" style="width:18rem;">
+                            <div class="card-body">
+                                <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/nonvegpizza.jpg" />
+                                <h5 class="card-title">Chicken Corn Pizza</h5>
+                                <p class="card-text">
+                                    <a asp-action="" class="btn btn-primary">cost Rs.100</a>
+                                </p>
+                                <p class="card-footer">Chicken Supreme Pizza is a tasty type of pizza which is topped with shredded chicken, mushrooms, capsicum. It combines the goodness of chicken with these wonderful veggies.</p><br />
+                                 <p class="card-deck"><img src="~/nonveglogo.png" style="margin-left:10px" width="30" height="30" /><img src="~/rating2.jpg" style="margin-left:140px" width="100" height="30" /> </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>CRUST</option>
+                                        <option value="Traditional pan pizza">Traditional pan pizza</option>
+                                        <option value="Thin crust">Thin crust</option>
+                                        <option value="Chicago Deep Dish">Chicago Deep Dish</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>TOPPINGS</option>
+                                        <option value="mushroom">Mushrooms</option>
+                                        <option value="bacon">Bacons</option>
+                                        <option value="Sausage">Sausage</option>
+                                        <option value="olives">Olives</option>
+                                        <option value="extra cheese">Extra Cheese</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                    </DIV>
+                </td>
+            </tr>
+
+            <tr>
+                <td id="b1">
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                        <div class="card" style="width:18rem;">
+                            <div class="card-body">
+                                <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/piz1.jpg" />
+                                <h5 class="card-title">Margharita</h5>
+                                <p class="card-text">
+                                    <a asp-action="" class="btn btn-primary">cost Rs.100</a>
+                                </p>
+                                <p class="card-footer">Yearning for a cheesy delight? Here's a Cheesy pizza to add soul to your weekend binging!It combines the goodness of cheese with wonderful veggies..No comfort food is better than a Pizza loaded with cheese! </p>
+                                <br />
+                                <p class="card-deck"><img src="~/veglogo.png" style="margin-left:10px" width="30" height="30" /><img src="~/rating.jpg" style="margin-left:140px" width="100" height="30" /> </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>CRUST</option>
+                                        <option value="Traditional pan pizza">Traditional pan pizza</option>
+                                        <option value="Thin crust">Thin crust</option>
+                                        <option value="Chicago Deep Dish">Chicago Deep Dish</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>TOPPINGS</option>
+                                        <option value="mushroom">Mushrooms</option>
+                                        <option value="onion">Onions</option>
+                                        <option value="black pepper">Black pepper</option>
+                                        <option value="olives">Olives</option>
+                                        <option value="extra cheese">Extra Cheese</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                    </DIV>
+                </td>
+                <td id="b2">
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded" style="margin:40px">
+                        <div class="card" style="width:18rem;">
+                            <div class="card-body">
+                                <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/vegpizza.jpg" />
+                                <h5 class="card-title">Capsicum pizza</h5>
+                                <p class="card-text">
+                                    <a asp-action="" class="btn btn-primary">cost Rs.100</a>
+                                </p>
+                                <p class="card-footer">
+                                    Hot, cheesy pizza loaded with your favorite veggies,featuring cherry tomatoes, artichoke, bell pepper, olives, red onion and some hidden baby spinach. There's a base of rich tomato sauce and golden, bubbling mozzarella underneath.
+                                </p><br />
+                                <p class="card-deck"><img src="~/veglogo.png" style="margin-left:10px" width="30" height="30" /><img src="~/rating.jpg" style="margin-left:140px" width="100" height="30" /> </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>CRUST</option>
+                                        <option value="Traditional pan pizza">Traditional pan pizza</option>
+                                        <option value="Thin crust">Thin crust</option>
+                                        <option value="Chicago Deep Dish">Chicago Deep Dish</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>TOPPINGS</option>
+                                        <option value="mushroom">Mushrooms</option>
+                                        <option value="onion">Onions</option>
+                                        <option value="black pepper">Black pepper</option>
+                                        <option value="olives">Olives</option>
+                                        <option value="extra cheese">Extra Cheese</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                    </DIV>
+                </td>
+                <td id="b3">
+                    <DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+                        <div class="card" style="width:18rem;">
+                            <div class="card-body">
+                                <img class="card-img-top" width="300" height="300" style="margin:50px 10px" src="~/nonvegpizza.jpg" />
+                                <h5 class="card-title">Chilli Chicken Pizza</h5>
+                                <p class="card-text">
+                                    <a asp-action="" class="btn btn-primary">cost Rs.100</a>
+                                </p>
+                                <p class="card-footer">Chicken Supreme Pizza is a tasty type of pizza which is topped with shredded chicken, mushrooms, capsicum. It combines the goodness of chicken with these wonderful veggies.</p><br />
+                                <p class="card-deck"><img src="~/nonveglogo.png" style="margin-left:10px" width="30" height="30" /><img src="~/rating2.jpg" style="margin-left:140px" width="100" height="30" /> </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>CRUST</option>
+                                        <option value="Traditional pan pizza">Traditional pan pizza</option>
+                                        <option value="Thin crust">Thin crust</option>
+                                        <option value="Chicago Deep Dish">Chicago Deep Dish</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <select class="badge-light" id="menid">
+                                        <option value="Currently available" selected>TOPPINGS</option>
+                                        <option value="mushroom">Mushrooms</option>
+                                        <option value="bacon">Bacons</option>
+                                        <option value="Sausage">Sausage</option>
+                                        <option value="olives">Olives</option>
+                                        <option value="extra cheese">Extra Cheese</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                    </DIV>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

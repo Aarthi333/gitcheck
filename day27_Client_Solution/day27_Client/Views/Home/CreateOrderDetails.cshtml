@@ -1,0 +1,290 @@
+﻿@model day27_Client.Models.OrderDetails
+
+@{
+    ViewData["Title"] = "CreateOrderDetails";
+}
+<script>
+    function myFirst() {
+        var txtname = document.getElementById("In1")
+        txtname.classList.add("border")
+        if (txtname.value == "") {
+            txtname.classList.add("border-danger")   //bootstrap class in js
+        }
+        else {
+            txtname.classList.add("border-success")
+            txtname.classList.remove("border-danger")
+        }
+    }
+    function sum() {
+        alert("Check the order summary before confirming the order!!")
+    }
+    function getVal() {
+        const val1 = document.getElementById('In1').value;
+        const val2 = document.getElementById('In2').value;
+        const val3 = document.getElementById('In3').value;
+        const val4 = document.getElementById('In4').value;
+        const val5 = document.getElementById('amount1').value;
+        const val6 = document.getElementById('amount2').value;
+        const val7 = document.getElementById('amount3').value;
+        const val8 = document.getElementById('In8').value;
+        let message = `ORDER SUMMARY:     
+                   YOUR NAME: ${val1} , 
+                   PHONE NUMBER: ${val2} , 
+                   ADDRESS: ${val3}, 
+                   PINCODE: ${val4} ,
+                   ___________________
+                   DELIVERY_TIME:30 mins,
+                   ____________________
+                   CHEESE PIZZA:${val5}
+                   VEG PIZZA:${val6}
+                   NON-VEG PIZZA:${val7}
+                   Additional:${val8}
+                     `;
+            let para = document.createElement('p'); //<p></p>
+            let paraText = document.createTextNode(message);
+            para.appendChild(paraText);//<p>message</p>
+            let targetElement = document.getElementById('alertMessage');
+            targetElement.appendChild(para); 
+    }
+    function amount() {
+        const val1 = document.getElementById('amount1').value;
+        const val2 = document.getElementById('amount2').value;
+        const val3 = document.getElementById('amount3').value;
+        if (val1 != 0 || val2 != 0 || val3 != 0) {
+            var result = [(val1 * 100) + (val2 * 100) + (val3*100) + 50];
+            let message = `AMOUNT TO BE PAID: RS. ${result}`
+            let para = document.createElement('p'); //<p></p>
+            let paraText = document.createTextNode(message);
+            para.appendChild(paraText);//<p>message</p>
+            let targetElement = document.getElementById('amountMessage');
+            targetElement.appendChild(para);
+        }
+        else {
+            alert("please enter the quantity needed")
+        }
+
+    }
+</script>
+<center><h4>You're already in the Final step to Order your Favourite Pizza</h4></center>
+<DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+    <div style="background-color:papayawhip">
+        <blockquote class="blockquote text-center">
+            <p class="mb-0">
+                Do provide us your order details precisely.It helps us deliver everything that you'll need at your doorstep.
+            </p>
+            <br />
+            <footer class="blockquote-footer">
+                Check out the Menu page for new arrivals.
+            </footer>
+        </blockquote>
+
+    </div>
+</DIV>
+<hr />
+<h4>ORDER DETAILS</h4>
+<DIV class="shadow-lg p-3 mb-5 bg-body rounded">
+
+    <div class="row">
+        <div class="col-md-4" style="background-color:azure">
+            <form asp-action="CreateOrderDetails" style="background-color:azure">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label> NAME: </label>
+                    <p>(Enter your full name !!!)</p>
+                    <input id="In1" asp-for="Customer_FullName" onblur="myFirst()" class="form-control" required />
+                    <span asp-validation-for="Customer_FullName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label"></label>
+                    <input id="In2" asp-for="PhoneNumber" class="form-control" required />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input type="text" id="In3" asp-for="Address" class="form-control" required />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Pincode" class="control-label"></label>
+                    <input id="In4" asp-for="Pincode" class="form-control" required />
+                    <span asp-validation-for="Pincode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OrderTime" class="control-label"></label>
+                    <input type="datetime-local" id="In5" asp-for="OrderTime" class="form-control" required />
+                    <span asp-validation-for="OrderTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <p>CHEESE PIZZA:</p>
+                    @*<label asp-for="Quantity_1" class="control-label"></label>*@
+                    <input type="number" id="amount1" asp-for="Quantity_1" placeholder="ENTER QUANTITY" class="form-control" required />
+                    <span asp-validation-for="Quantity_1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <p>VEG PIZZA:</p>
+                    @*<label asp-for="Quantity_2" class="control-label"></label>*@
+                    <input type="number" id="amount2" asp-for="Quantity_2" placeholder="ENTER QUANTITY" class="form-control" required />
+                    <span asp-validation-for="Quantity_2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <p>NON VEG PIZZA:</p>
+                    @*<label asp-for="Quantity_3" class="control-label"></label>*@
+                    <input type="number" id="amount3" asp-for="Quantity_3" placeholder="ENTER QUANTITY" class="form-control" required />
+                    <span asp-validation-for="Quantity_3" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+            <table>
+                <tr>
+                    <td>
+                        Cheese pizza :
+                    <td>
+                        <p>QUANTITY OF PIZZA('S)</p>
+                        <input type="number" id="amount1" class="form-control" required />
+                    </td>
+                    <td>
+                        Veg pizza :
+                    <td>
+                        <p>QUANTITY OF PIZZA('S)</p>
+                        <input type="number" id="amount2" class="form-control" required />
+                    </td>
+                    <td>
+                        Non-Veg pizza :
+                    <td>
+                        <p>QUANTITY OF PIZZA('S)</p>
+                        <input type="number" id="amount3" class="form-control" required />
+                    </td>
+
+                </tr>
+            </table>
+        </div>*@
+                <div class="form-group">
+                    @*<label asp-for="Crust_1" class="control-label"></label>*@
+                    <p>CRUST FOR CHEES-PIZZA</p>
+                    @*<input id="In8" asp-for="Crust" class="form-control" />*@
+                    @Html.DropDownList("Crust_1", new List<SelectListItem>{
+                      new SelectListItem {Value="Thin Crust" ,Text="Thin Crust"},
+                      new SelectListItem{Value="Traditional Pan Dish",Text="Traditional Pan Dish"},
+                      new SelectListItem{Value="Chicago Deep Dish",Text="Chicago Deep Dish"},
+                      new SelectListItem{Value="NOT REQUIRED",Text="NOT REQUIRED"},
+               }, "Cheese-Crust", new { @class = "form-control" }
+                   )
+                    <span asp-validation-for="Crust_1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <p>CRUST FOR VEG-PIZZA</p>
+                    @*<input id="In8" asp-for="Crust" class="form-control" />*@
+                    @Html.DropDownList("Crust_2", new List<SelectListItem>{
+                      new SelectListItem {Value="Thin Crust" ,Text="Thin Crust"},
+                      new SelectListItem{Value="Traditional Pan Dish",Text="Traditional Pan Dish"},
+                      new SelectListItem{Value="Chicago Deep Dish",Text="Chicago Deep Dish"},
+                      new SelectListItem{Value="NOT REQUIRED",Text="NOT REQUIRED"},
+               }, "Veg-Crust", new { @class = "form-control" }
+                   )
+                    <span asp-validation-for="Crust_2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <p>CRUST FOR NON-VEG PIZZA</p>
+                    @*<input id="In8" asp-for="Crust" class="form-control" />*@
+                    @Html.DropDownList("Crust_3", new List<SelectListItem>{
+                      new SelectListItem {Value="Thin Crust" ,Text="Thin Crust"},
+                      new SelectListItem{Value="Traditional Pan Dish",Text="Traditional Pan Dish"},
+                      new SelectListItem{Value="Chicago Deep Dish",Text="Chicago Deep Dish"},
+                      new SelectListItem{Value="NOT REQUIRED",Text="NOT REQUIRED"},
+               }, "NonVeg-Crust", new { @class = "form-control" }
+                   )
+                    <span asp-validation-for="Crust_3" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <p>Do Select the toppings for your order!!</p>
+                    @*<label asp-for="Suggestions" class="control-label"></label>*@
+                    <p>TOPPINGS</p>
+                    @* <input id="In9" asp-for="Suggestions" ONBLUR="sum()"  class="form-control" />*@
+                    @Html.DropDownList("Suggestions_1", new List<SelectListItem>{
+                   new SelectListItem {Value="mushroom" ,Text="mushroom"},
+                    new SelectListItem{Value="Sausage",Text="Sausage"},
+                     new SelectListItem{Value="olives",Text="olives"},
+                   new SelectListItem{Value="extra cheese",Text="extra cheese"},
+                   new SelectListItem{Value="NOT REQUIRED",Text="NOT REQUIRED"},
+                   }, "Cheese Toppings", new { @class = "form-control" }
+                )
+                    <span asp-validation-for="Suggestions_1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="Suggestions" class="control-label"></label>*@
+                    <p>TOPPINGS</p>
+                    @* <input id="In9" asp-for="Suggestions" ONBLUR="sum()"  class="form-control" />*@
+                    @Html.DropDownList("Suggestions_2", new List<SelectListItem>{
+                   new SelectListItem {Value="mushroom" ,Text="mushroom"},
+                   new SelectListItem{Value="black peppers",Text="black peppers"},
+                    new SelectListItem{Value="bacon",Text="bacon"},
+                     new SelectListItem{Value="olives",Text="olives"},
+                   new SelectListItem{Value="extra cheese",Text="extra cheese"},
+                   new SelectListItem{Value="NOT REQUIRED",Text="NOT REQUIRED"},
+                   }, "Veg Toppings", new { @class = "form-control" }
+                )
+                    <span asp-validation-for="Suggestions_2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="Suggestions" class="control-label"></label>*@
+                    <p>TOPPINGS</p>
+                    @* <input id="In9" asp-for="Suggestions" ONBLUR="sum()"  class="form-control" />*@
+                    @Html.DropDownList("Suggestions_3", new List<SelectListItem>{
+                    new SelectListItem{Value="Sausage",Text="Sausage"},
+                     new SelectListItem{Value="olives",Text="olives"},
+                   new SelectListItem{Value="extra cheese",Text="extra cheese"},
+                   new SelectListItem{Value="NOT REQUIRED",Text="NOT REQUIRED"},
+                   }, "Non-Veg Toppings", new { @class = "form-control" }
+                )
+                    <span asp-validation-for="Suggestions_3" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Additional" class="control-label"></label>
+                    <input id="In8" asp-for="Additional" ONBLUR="sum()" class="form-control" required />
+                    <span asp-validation-for="Additional" class="text-danger"></span>
+                </div>
+                <div class="card" style="text-align:center" id="alertMessage"></div>
+                <div class="card" style="text-align:right" id="amountMessage"></div>
+                <div class="form-group">
+                    <input type="submit" value="Confirm Order" class="btn btn-primary" />
+                </div>
+            </form>
+            <table>
+                <tr>
+                    <td> <button class="btn btn-secondary" ONCLICK="amount()">CASH AMOUNT</button></td>
+                    <td>
+                        <button class="btn btn-secondary" onclick="getVal()">ORDER SUMMARY</button>
+                    </td>                
+                    <td>
+                        <div>
+                            <button class="btn btn-outline-danger"><a asp-action="Index">CANCEL ORDER</a></button>
+                        </div>
+                    </td>
+                    <td>
+                       <button class="btn btn-outline-info"> @Html.ActionLink("OrderSummary", "OrderSummary", new { id = TempData["OrderDetails_ID"] }) </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</DIV>
+@*<table>
+    <tr>
+        <td> <button class="btn btn-light" ONCLICK="amount()">AMOUNT TO BE PAID FOR THE ABOVE ORDER!!</button></td>
+        <td>
+            <button class="btn btn-light" onclick="getVal()">ORDER SUMMARY</button>
+        </td>
+        <td>
+            <div>
+                <button class="btn btn-light"> <a asp-action="OrderConfirm">CONFIRM ORDER</a> </button>
+            </div>
+        </td>
+        <td>
+            <div>
+                <button class="btn btn-light"><a asp-action="Index">CANCEL ORDER</a></button>
+            </div>
+        </td>
+    </tr>
+</table>*@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
